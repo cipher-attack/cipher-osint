@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CIPHER-OSINT | Neural Dashboard v7.0 [ZENITH]</title>
+    <!-- Core Assets -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/tokyo-night-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500;800&family=Plus+Jakarta+Sans:wght@300;500;800&display=swap');
+        
+        :root { --emerald: #10b981; --bg: #010307; }
+
+        /* FIX 1: Allow Body Scrolling for Mobile */
+        body { 
+            background: var(--bg); 
+            color: #e2e8f0; 
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            min-height: 100vh;
+        }
+
+        /* FIX 2: Better Cyber Scrollbar */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #020617; }
+        ::-webkit-scrollbar-thumb { background: var(--emerald); border-radius: 10px; }
+
+        .glass { 
+            background: rgba(10, 15, 25, 0.85); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(16, 185, 129, 0.1); 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        .logo-aura { animation: pulse-glow 3s infinite alternate; }
+        @keyframes pulse-glow { from { filter: drop-shadow(0 0 5px var(--emerald)); } to { filter: drop-shadow(0 0 20px var(--emerald)); } }
+        
+        .spin-logo { animation: spin 20s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+        /* FIX 3: Robust Prose/Markdown Rendering */
+        .prose-elite { 
+            max-width: 100%; 
+            color: #94a3b8; 
+            line-height: 1.6; 
+            font-size: 14px; 
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        .prose-elite h1, .prose-elite h2 { color: var(--emerald); font-weight: 800; margin-top: 1.5rem; margin-bottom: 1rem; border-left: 3px solid var(--emerald); padding-left: 0.75rem; }
+        .prose-elite code { background: #1e293b; color: #5eead4; padding: 0.2rem 0.4rem; border-radius: 6px; font-family: 'JetBrains Mono'; }
+        .prose-elite pre { overflow-x: auto; max-width: 100%; margin: 1rem 0; }
+        .prose-elite table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 12px; }
+        .prose-elite th, .prose-elite td { border: 1px solid rgba(16, 185, 129, 0.1); padding: 0.5rem; text-align: left; }
+
+        .watermark { position: fixed; bottom: -50px; right: -50px; opacity: 0.03; transform: rotate(-15deg); pointer-events: none; z-index: -1; }
+
+        .scan-line { height: 1px; background: var(--emerald); box-shadow: 0 0 20px var(--emerald); position: absolute; width: 100%; animation: scan-move 4s infinite linear; opacity: 0.3; }
+        @keyframes scan-move { 0% { top: 0; } 100% { top: 100%; } }
+
+        .sidebar { width: 300px; border-right: 1px solid rgba(16, 185, 129, 0.1); background: rgba(2, 4, 8, 0.8); }
+        .neon-glow-btn:hover { box-shadow: 0 0 30px rgba(16, 185, 129, 0.4); border-color: var(--emerald); }
+        .glitch-hover:hover { animation: glitch 0.3s linear infinite; }
+        @keyframes glitch { 0% { transform: translate(0); } 20% { transform: translate(-2px, 2px); } 40% { transform: translate(-2px, -2px); } 60% { transform: translate(2px, 2px); } 80% { transform: translate(2px, -2px); } 100% { transform: translate(0); } }
+
+        /* FIX 4: Ensure smooth transitions on mobile */
+        #results-content { margin-bottom: 150px; }
+    </style>
+</head>
+<body class="flex flex-col lg:flex-row min-h-screen">
+    <!-- Sidebar (Hidden on mobile) -->
+    <aside class="sidebar hidden lg:flex flex-col p-6 space-y-8 h-screen sticky top-0">
+        <div class="flex items-center space-x-3">
+            <svg width="40" height="40" viewBox="0 0 100 100" class="logo-aura">
+                <path d="M 75 25 L 35 25 L 15 50 L 35 75 L 75 75" stroke="#10b981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="40" cy="50" r="10" stroke="#10b981" stroke-width="6"/>
+                <path d="M 50 50 L 85 50" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
+                <path d="M 68 50 L 68 62" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
+                <path d="M 78 50 L 78 58" stroke="#10b981" stroke-width="6" stroke-linecap="round"/>
+            </svg>
+            <h2 class="text-sm font-black tracking-widest text-emerald-500 uppercase">Vault_System</h2>
+        </div>
+        
+        <div class="space-y-4">
+            <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Neural Logs</p>
+            <div id="log-stream" class="space-y-3 font-mono text-[9px] text-slate-600 overflow-y-auto h-[350px]">
+                <div class="text-emerald-800">> System Ready...</div>
+            </div>
+        </div>
+
+        <div class="mt-auto glass p-4 rounded-2xl border-emerald-500/10">
+            <p class="text-[8px] text-slate-500 italic leading-relaxed">"Deciphering the future before it happens.."</p>
+            <p class="text-[9px] text-emerald-500 font-bold mt-2">— Biruk Getachew (CIPHER)</p>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-grow flex flex-col relative">
+        <div class="watermark">
+            <svg width="300" height="300" viewBox="0 0 100 100"><path d="M 75 25 L 35 25 L 15 50 L 35 75 L 75 75" stroke="#10b981" stroke-width="1"/><circle cx="40" cy="50" r="10" stroke="#10b981" stroke-width="1"/></svg>
+        </div>
+
+        <!-- Header (Sticky for mobile and desktop) -->
+        <header class="sticky top-0 z-[60] glass border-b border-emerald-500/20 px-4 py-4 flex justify-between items-center w-full">
+            <div class="flex items-center space-x-3">
+                <h1 class="text-lg lg:text-2xl font-black tracking-tighter uppercase glitch-hover">Cipher <span class="text-emerald-500">OSINT</span></h1>
+                <div class="hidden sm:block h-4 w-[1px] bg-slate-800"></div>
+                <div class="flex items-center space-x-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    <span class="text-[8px] lg:text-[10px] font-mono text-emerald-700 uppercase">Node_Active</span>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-3 lg:space-x-6">
+                <select id="model-select" class="bg-black/80 border border-emerald-500/20 rounded-xl px-2 py-1 text-[10px] font-mono text-emerald-400 focus:ring-0">
+                    <option value="gemini">Gemini 3.0</option>
+                    <option value="openai">GPT-4o</option>
+                    <option value="claude">Claude 3.5</option>
+                </select>
+                <button id="download-btn" class="glass p-2 rounded-xl border-emerald-500/20 text-emerald-500" title="Download Report"><i data-lucide="download-cloud" class="w-4 h-4"></i></button>
+            </div>
+        </header>
+
+        <!-- Results Area -->
+        <main id="display-area" class="flex-grow p-4 lg:p-12 w-full">
+            <div id="welcome-view" class="min-h-[50vh] flex flex-col items-center justify-center space-y-8 py-20">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-emerald-500/20 blur-[60px] rounded-full animate-pulse"></div>
+                    <svg width="100" height="100" viewBox="0 0 100 100" class="relative z-10 spin-logo">
+                        <path d="M 75 25 L 35 25 L 15 50 L 35 75 L 75 75" stroke="#10b981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="40" cy="50" r="10" stroke="#10b981" stroke-width="4"/>
+                    </svg>
+                </div>
+                <div class="text-center">
+                    <h2 class="text-xl lg:text-3xl font-black text-slate-300">AWAITING NEURAL COMMAND</h2>
+                    <p class="text-slate-500 font-mono text-[10px] lg:text-xs uppercase tracking-[0.3em] mt-2">Initialize Deep Recon Protocol</p>
+                </div>
+            </div>
+            
+            <div id="results-content" class="prose-elite hidden w-full overflow-x-hidden">
+                <!-- AI Output -->
+            </div>
+        </main>
+
+        <!-- FIX 5: FIXED BOTTOM INPUT - ALWAYS ON TOP -->
+        <div class="fixed bottom-0 left-0 lg:left-auto lg:right-0 w-full lg:w-[calc(100%-300px)] z-[70] p-4 bg-gradient-to-t from-black via-black/90 to-transparent">
+            <div class="max-w-4xl mx-auto glass rounded-[1.5rem] lg:rounded-[2.5rem] p-3 lg:p-4 flex flex-col gap-2 border-emerald-500/20 neon-glow-btn">
+                <div class="flex items-center gap-2 lg:gap-4">
+                    <button id="ghost-mode" class="p-3 lg:p-4 rounded-xl lg:rounded-2xl bg-slate-950 border border-slate-800 text-slate-600 hover:text-red-500 transition-all">
+                        <i data-lucide="ghost" class="w-5 h-5 lg:w-6 lg:h-6"></i>
+                    </button>
+                    
+                    <div class="flex-grow">
+                        <input type="text" id="target-input" placeholder="Infiltrate Target..." 
+                               class="w-full bg-transparent border-none py-2 lg:py-4 text-sm lg:text-lg font-bold placeholder:text-slate-800 focus:ring-0 text-emerald-50">
+                    </div>
+
+                    <button id="execute-btn" class="bg-emerald-500 hover:bg-emerald-400 text-black p-4 lg:p-5 rounded-xl lg:rounded-2xl transition-all shadow-lg group">
+                        <svg width="20" height="20" viewBox="0 0 100 100" fill="none" class="lg:w-6 lg:h-6 group-hover:rotate-12 transition-transform">
+                            <path d="M 75 25 L 35 25 L 15 50 L 35 75 L 75 75" stroke="black" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="40" cy="50" r="10" stroke="black" stroke-width="14"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="flex justify-between items-center px-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <p id="status-text" class="text-[8px] lg:text-[10px] font-mono text-emerald-700 uppercase tracking-widest">Awaiting Command</p>
+                    </div>
+                    <div class="flex space-x-2 lg:space-x-4">
+                        <p class="text-[8px] lg:text-[9px] font-mono text-slate-700">SID: <span id="session-id">---</span></p>
+                        <p class="text-[8px] lg:text-[9px] font-mono text-slate-700 hidden sm:block">ARCH: <span class="text-emerald-900">ZENITH</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        marked.setOptions({ highlight: (code) => hljs.highlightAuto(code).value });
+
+        const executeBtn = document.getElementById('execute-btn');
+        const targetInput = document.getElementById('target-input');
+        const resultsContent = document.getElementById('results-content');
+        const welcomeView = document.getElementById('welcome-view');
+        const statusText = document.getElementById('status-text');
+        const ghostBtn = document.getElementById('ghost-mode');
+        const logStream = document.getElementById('log-stream');
+        const sessionID = document.getElementById('session-id');
+
+        let isGhost = false;
+        sessionID.textContent = Math.random().toString(36).substring(2, 10).toUpperCase();
+
+        const addLog = (msg, type = 'info') => {
+            if (!logStream) return;
+            const div = document.createElement('div');
+            div.className = type === 'err' ? 'text-red-500' : 'text-emerald-800';
+            div.innerHTML = `[${new Date().toLocaleTimeString()}] > ${msg}`;
+            logStream.prepend(div);
+        };
+
+        ghostBtn.addEventListener('click', () => {
+            isGhost = !isGhost;
+            ghostBtn.classList.toggle('text-red-500', isGhost);
+            ghostBtn.classList.toggle('bg-red-500/5', isGhost);
+            addLog(isGhost ? "Ghost Protocol Active" : "Surface Mode Active", isGhost ? 'err' : 'info');
+        });
+
+        executeBtn.addEventListener('click', async () => {
+            const query = targetInput.value.trim();
+            if (!query) return;
+            targetInput.value = '';
+            
+            welcomeView.classList.add('hidden');
+            resultsContent.classList.remove('hidden');
+            resultsContent.innerHTML = `<div class="space-y-6 animate-pulse"><div class="h-8 bg-emerald-500/10 rounded-xl w-1/3"></div><div class="h-64 glass rounded-[2rem] relative overflow-hidden"><div class="scan-line"></div></div></div>`;
+            
+            addLog(`Analyzing: ${query}`);
+            statusText.textContent = "Status: Scouring Sector...";
+
+            try {
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: `target=${encodeURIComponent(query)}&model=${document.getElementById('model-select').value}&isGhost=${isGhost}`
+                });
+                
+                const data = await response.json();
+                statusText.textContent = "Status: Analysis Vaulted";
+                resultsContent.innerHTML = `<div class="animate-in slide-in-from-bottom-4 duration-1000">${marked.parse(data.results)}</div>`;
+                document.querySelectorAll('pre code').forEach((el) => hljs.highlightElement(el));
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll back to top to read result
+
+            } catch (err) {
+                statusText.textContent = "Status: Link Offline";
+                resultsContent.innerHTML = `<div class="p-6 glass border-red-500/20 rounded-2xl text-red-500 font-mono text-sm">FATAL_LINK_FAILURE: Verify Node.</div>`;
+            }
+        });
+
+        document.getElementById('download-btn').addEventListener('click', () => {
+            const content = resultsContent.innerText;
+            if (!content || content.length < 10) return;
+            const blob = new Blob([content], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `CIPHER_INTEL_${sessionID.textContent}.md`;
+            a.click();
+        });
+
+        targetInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') executeBtn.click(); });
+    </script>
+</body>
+</html>

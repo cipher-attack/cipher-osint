@@ -1,0 +1,39 @@
+# --- SOVEREIGN SECURITY MASKING ---
+
+# 1. Credentials & Secrets (CRITICAL)
+.env
+*.env
+keys.json
+api_keys.txt
+
+# 2. Scraped Intelligence Vault (Don't leak your targets)
+vault/
+pkg/report/output/
+*.log
+*.json
+
+# 3. Compiled Binaries (Executable files)
+cipher-osint
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+
+# 4. Go Dependency Cache & Workspaces
+vendor/
+go.work
+.go/
+
+# 5. System & IDE Noise
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*~
+__pycache__/
+
+# 6. Web/Node Noise (If added later)
+node_modules/
+.npm/
