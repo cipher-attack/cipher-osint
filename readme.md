@@ -25,7 +25,7 @@
   </a>
 </p>
 
-<h1 align="center">📡 CIPHER-OSINT [ZENITH OVERLORD]</h1>
+<h1 align="center"> CIPHER-OSINT</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/ENGINE-GOLANG%20%2F%20FIBER-00ADD8?style=for-the-badge&logo=go" />
@@ -40,7 +40,7 @@
 
 ---
 
-### 🌌 EXECUTIVE SUMMARY
+###  EXECUTIVE SUMMARY
 **CIPHER-OSINT v7.0** is a multi-dimensional intelligence orchestration framework. Engineered in high-concurrency **Golang**, it integrates the **Zenith Overlord Engine** to fuse real-time surface scraping with the **Ghost Protocol** (Tor Stealth). By utilizing recursive neural synthesis, it deconstructs technical indicators into high-fidelity actionable intelligence.
 
 ---
@@ -57,7 +57,7 @@
 
 ---
 
-### 🧬 SYSTEM TOPOLOGY (INTELLIGENCE FLOW)
+### SYSTEM TOPOLOGY (INTELLIGENCE FLOW)
 
 ```mermaid
 graph LR
@@ -76,7 +76,7 @@ graph LR
 
 ---
 
-### 🚀 DEPLOYMENT PROTOCOL
+###  DEPLOYMENT PROTOCOL
 
 Optimized for high-performance deployment on Linux and advanced Termux nodes.
 
@@ -98,11 +98,11 @@ go run .
 
 ---
 
-### 💠 ZENITH INTERFACE CAPABILITIES
-- ⚡ **Multi-Model Inversion**: Real-time switching between world-class neural nodes.
-- 🌑 **Ghost Protocol**: Toggle active Tor routing for deep-web reconnaissance.
-- 📊 **Dynamic Rendering**: Live visualization of intelligence via `Zenith-Interface`.
-- 💾 **Neural Export**: Export tactical reports in structured Markdown directly from the UI.
+###  ZENITH INTERFACE CAPABILITIES
+-  **Multi-Model Inversion**: Real-time switching between world-class neural nodes.
+-   **Ghost Protocol**: Toggle active Tor routing for deep-web reconnaissance.
+-   **Dynamic Rendering**: Live visualization of intelligence via `Zenith-Interface`.
+-   **Neural Export**: Export tactical reports in structured Markdown directly from the UI.
 
 ---
 
@@ -130,7 +130,7 @@ go run .
 
 ---
 
-### 🛡️ ETHICAL DISCLOSURE
+###  ETHICAL DISCLOSURE
 This framework is released strictly for authorized cybersecurity research, red-teaming, and institutional intelligence gathering. Unauthorized deployment against target systems is strictly prohibited. The developer assumes no liability for tactical misuse.
 
 <p align="center">
