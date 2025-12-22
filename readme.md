@@ -1,4 +1,4 @@
-# CIPHER-OSINT v7.0
+# CIPHER-OSINT
 
 <p align="left">
   <img src="[https://img.shields.io/badge/Language-Go%20(Golang)-00ADD8?style=flat-square&logo=go](https://img.shields.io/badge/Language-Go%20(Golang)-00ADD8?style=flat-square&logo=go)" />
