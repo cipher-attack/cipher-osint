@@ -2,7 +2,7 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/Language-Go%20(Golang)-00ADD8?style=flat-square&logo=go" />
-  <img src="https://img.shields.io/badge/AI-Gemini%20%2F%20GPT--4-10b981?style=flat-square&logo=openai" />
+  <img src="https://img.shields.io/badge/AI-Gemini%20%2F%20GPT--4-10b981?style=flat-square&logo=openai/claude" />
   <img src="https://img.shields.io/badge/Network-Tor%20Integration-7D4698?style=flat-square&logo=tor-browser" />
 </p>
 
