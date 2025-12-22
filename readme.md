@@ -50,7 +50,7 @@ Make sure you have `Go` installed and a working Tor connection (if using dark we
 
 ```bash
 # 1. Clone the repo
-git clone [https://github.com/cipher-attack/cipher-osint.git](https://github.com/cipher-attack/cipher-osint.git)
+git clone https://github.com/cipher-attack/cipher-osint.git
 
 # 2. Install dependencies
 cd cipher-osint && go mod tidy
