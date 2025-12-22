@@ -82,17 +82,20 @@ Environment setup for Linux and Termux nodes.
 
 ```bash
 # 1. Acquire Framework
-git clone [https://github.com/cipher-attack/cipher-osint.git](https://github.com/cipher-attack/cipher-osint.git)
+git clone https://github.com/cipher-attack/cipher-osint.git
 
 # 2. Resolve Module Dependencies
 cd cipher-osint && go mod tidy
 
 # 3. Environment Configuration
-# Define your secure API credentials in the .env file
 echo "GEMINI_API_KEY=your_secure_key" > .env
 
+echo "OPENAI_API_KEY=your_secure_key" > .env
+
+echo "ANTHROPIC_API_KEY=your_secure_key" > .env
 # 4. Initialize Core
 go run .
+
 ```
 
 > **Engineering Note:** Ensure your Tor relay is active on `127.0.0.1:9050` before initiating dark-web modules.
