@@ -104,8 +104,8 @@ go run .
 <div align="left">
   <img src="https://github.com/cipher-attack.png" width="150" align="left" style="border-radius: 15px; border: 3px solid #10b981; margin-right: 20px;" />
   <h3>Biruk Getachew</h3>
-  <p><i>Principal Software Engineer & Cybersecurity Researcher</i></p>
-  <p>Specializing in high-performance system architecture, neural interaction models, and sovereign intelligence systems. Engineering tools that bridge the gap between raw data and strategic insight.</p>
+  <p><i>Offensive Security Researcher & Neural Systems Specialist</i></p>
+  <p>I am a 12th-grade student passionate about Offensive Security and AI. Breaking away from traditional setups, I handle my entire development and auditing workflow directly from mobile interfaces. My core focus is integrating Large Language Models (LLMs) into security testing to automate vulnerability discovery and high-precision reconnaissance.</p>
   <p>
     <a href="https://www.youtube.com/@cipher-attack"><img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white" /></a>
     <a href="https://github.com/cipher-attack"><img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" /></a>
