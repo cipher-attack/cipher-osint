@@ -1,18 +1,17 @@
 # CIPHER-OSINT
 
 <p align="left">
-  <img src="[https://img.shields.io/badge/Language-Go%20(Golang)-00ADD8?style=flat-square&logo=go](https://img.shields.io/badge/Language-Go%20(Golang)-00ADD8?style=flat-square&logo=go)" />
-  <img src="[https://img.shields.io/badge/AI-Gemini%20%2F%20GPT--4-10b981?style=flat-square&logo=openai](https://img.shields.io/badge/AI-Gemini%20%2F%20GPT--4-10b981?style=flat-square&logo=openai)" />
-  <img src="[https://img.shields.io/badge/Network-Tor%20Integration-7D4698?style=flat-square&logo=tor-browser](https://img.shields.io/badge/Network-Tor%20Integration-7D4698?style=flat-square&logo=tor-browser)" />
+  <img src="https://img.shields.io/badge/Language-Go%20(Golang)-00ADD8?style=flat-square&logo=go" />
+  <img src="https://img.shields.io/badge/AI-Gemini%20%2F%20GPT--4-10b981?style=flat-square&logo=openai" />
+  <img src="https://img.shields.io/badge/Network-Tor%20Integration-7D4698?style=flat-square&logo=tor-browser" />
 </p>
 
-> **A fast, concurrent OSINT tool powered by Go and LLMs.**
-> Automates data gathering from surface and dark web sources, using AI to summarize findings into actionable reports.
+> **CIPHER-OSINT v7.0.1 is a high-performance information gathering framework built with Golang. It leverages LLM integration for automated data analysis and utilizes Tor-based routing for secure, anonymous reconnaissance.**
 
 ---
 
 ### About The Project
-**CIPHER-OSINT** is built to solve a common problem in reconnaissance: information overload. Instead of manually sifting through raw logs, this tool uses **Golang** for high-speed scanning and integrates AI (Gemini/GPT/claude) to filter and analyze the data.
+**CIPHER-OSINT** is built to solve a common problem in reconnaissance: information overload. Instead of manually sifting through raw logs, this tool uses **Golang** for high-speed scanning and integrates AI (Gemini/GPT/Claude) to filter and analyze the data.
 
 It's designed to run efficiently on Linux environments (including Termux), handling everything from scraping to reporting with minimal configuration.
 
@@ -22,11 +21,11 @@ It's designed to run efficiently on Linux environments (including Termux), handl
 
 | Feature | Details |
 | :--- | :--- |
-| **AI Analysis** | Uses claude,Gemini or GPT-4 to clean raw data and highlight sensitive information. |
+| **AI Analysis** | Uses Gemini, GPT-4, or Claude to clean raw data and highlight sensitive information. |
 | **Dark Web Support** | Routes requests through Tor (SOCKS5) to scan .onion services safely. |
 | **High Concurrency** | Built with Go routines to scan multiple targets simultaneously without lag. |
 | **Clean Reporting** | Generates structured Markdown reports instead of messy JSON dumps. |
-| **Smart Filtering** | Automatically strips irrelevant metadata to save on API token costs. |
+| **Smart Filtering** | Automatically strips irrelevant metadata to save on AI processing costs. |
 
 ---
 
@@ -51,37 +50,37 @@ Make sure you have `Go` installed and a working Tor connection (if using dark we
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/cipher-attack/cipher-osint.git
+git clone [https://github.com/cipher-attack/cipher-osint.git](https://github.com/cipher-attack/cipher-osint.git)
 
 # 2. Install dependencies
 cd cipher-osint && go mod tidy
 
 # 3. Setup API Keys
-# Create a .env file and add your keys (Gemini, OpenAI, or Anthropic)
-# ** Gemini**
-echo "GEMINI_API_KEY=your_gemini_key" > .env
+echo "GEMINI_API_KEY=your_key_here" > .env
+echo "OPENAI_API_KEY=your_key_here" >> .env
+echo "ANTHROPIC_API_KEY=your_key_here" >> .env
 
-# ** ChatGPT (OpenAI)**
-echo "OPENAI_API_KEY=your_chatgpt_key" >> .env
-
-# ** Claude (Anthropic)**
-echo "ANTHROPIC_API_KEY=your_claude_key" >> .env
-
-# 4. Run
+# 4. Run the tool
 go run .
 ```
 
-> **Note:** For dark web scanning, ensure Tor is running on port `9050`.
-
 ---
 
-### Author
+### 👤 THE ARCHITECT
 
-**Biruk Getachew** - *Security Researcher & Developer*
+<div align="left">
+  <img src="https://github.com/cipher-attack.png" width="130" align="left" style="border-radius: 12px; border: 2px solid #10b981; margin-right: 20px;" />
+  <h3>Biruk Getachew (CIPHER)</h3>
+  <p><i>Offensive Security Researcher & AI Integrator</i></p>
+  <p>I am a 12th-grade student passionate about Offensive Security and AI. I manage my entire development and auditing workflow directly from mobile interfaces, focusing on the integration of Large Language Models (LLMs) to automate vulnerability discovery and high-precision reconnaissance.</p>
+  <p>
+    <a href="https://github.com/cipher-attack">GitHub</a> • 
+    <a href="https://www.youtube.com/@cipher-attack">YouTube</a> • 
+    <a href="https://t.me/cipher_attacks">Telegram</a>
+  </p>
+</div>
 
-I focus on building efficient security tools that work seamlessly on mobile/ARM architectures. My current work involves integrating LLMs into offensive security workflows to automate the boring parts of recon.
-
-[GitHub](https://github.com/cipher-attack) • [YouTube](https://www.youtube.com/@cipher-attack) • [Telegram](https://t.me/cipher_attacks)
+<br clear="left"/>
 
 ---
 
