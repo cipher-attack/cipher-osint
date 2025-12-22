@@ -12,7 +12,7 @@
 ---
 
 ### About The Project
-**CIPHER-OSINT** is built to solve a common problem in reconnaissance: information overload. Instead of manually sifting through raw logs, this tool uses **Golang** for high-speed scanning and integrates AI (Gemini/GPT) to filter and analyze the data.
+**CIPHER-OSINT** is built to solve a common problem in reconnaissance: information overload. Instead of manually sifting through raw logs, this tool uses **Golang** for high-speed scanning and integrates AI (Gemini/GPT/claude) to filter and analyze the data.
 
 It's designed to run efficiently on Linux environments (including Termux), handling everything from scraping to reporting with minimal configuration.
 
@@ -22,7 +22,7 @@ It's designed to run efficiently on Linux environments (including Termux), handl
 
 | Feature | Details |
 | :--- | :--- |
-| **AI Analysis** | Uses Gemini or GPT-4 to clean raw data and highlight sensitive information. |
+| **AI Analysis** | Uses claude,Gemini or GPT-4 to clean raw data and highlight sensitive information. |
 | **Dark Web Support** | Routes requests through Tor (SOCKS5) to scan .onion services safely. |
 | **High Concurrency** | Built with Go routines to scan multiple targets simultaneously without lag. |
 | **Clean Reporting** | Generates structured Markdown reports instead of messy JSON dumps. |
