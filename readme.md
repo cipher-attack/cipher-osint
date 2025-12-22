@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=10b981&height=250&section=header&text=CIPHER-OSINT%20v7.0&fontSize=80&animation=fadeIn&fontAlignY=35&desc=THE%20ZENITH%20OVERLORD%20EDITION&descAlignY=55&descSize=20" />
+  <img src="[https://capsule-render.vercel.app/api?type=waving&color=10b981&height=250&section=header&text=CIPHER-OSINT%20v7.0&fontSize=80&animation=fadeIn&fontAlignY=35&desc=ADVANCED%20OSINT%20FRAMEWORK&descAlignY=55&descSize=20](https://capsule-render.vercel.app/api?type=waving&color=10b981&height=250&section=header&text=CIPHER-OSINT%20v7.0&fontSize=80&animation=fadeIn&fontAlignY=35&desc=ADVANCED%20OSINT%20FRAMEWORK&descAlignY=55&descSize=20)" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/cipher-attack">
-    <svg width="220" height="220" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0px 0px 15px rgba(16, 185, 129, 0.6));">
+  <a href="[https://github.com/cipher-attack](https://github.com/cipher-attack)">
+    <svg width="220" height="220" viewBox="0 0 100 100" fill="none" xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" style="filter: drop-shadow(0px 0px 15px rgba(16, 185, 129, 0.6));">
       <circle cx="50" cy="50" r="48" stroke="#10b981" stroke-width="0.5" stroke-dasharray="4 2">
         <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="15s" repeatCount="indefinite" />
       </circle>
@@ -25,103 +25,106 @@
   </a>
 </p>
 
-<h1 align="center"> CIPHER-OSINT</h1>
+<h1 align="center">CIPHER-OSINT</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ENGINE-GOLANG%20%2F%20FIBER-00ADD8?style=for-the-badge&logo=go" />
-  <img src="https://img.shields.io/badge/AI_NEXUS-OMNI--REASONER-10b981?style=for-the-badge&logo=google-gemini" />
-  <img src="https://img.shields.io/badge/NETWORK-GHOST--PROTOCOL-red?style=for-the-badge&logo=tor-browser" />
+  <img src="[https://img.shields.io/badge/Language-Go-00ADD8?style=flat-square&logo=go](https://img.shields.io/badge/Language-Go-00ADD8?style=flat-square&logo=go)" />
+  <img src="[https://img.shields.io/badge/Framework-Fiber-black?style=flat-square&logo=go](https://img.shields.io/badge/Framework-Fiber-black?style=flat-square&logo=go)" />
+  <img src="[https://img.shields.io/badge/AI-Gemini%20%7C%20GPT-10b981?style=flat-square&logo=openai](https://img.shields.io/badge/AI-Gemini%20%7C%20GPT-10b981?style=flat-square&logo=openai)" />
+  <img src="[https://img.shields.io/badge/Network-Tor%20Integration-7D4698?style=flat-square&logo=tor-browser](https://img.shields.io/badge/Network-Tor%20Integration-7D4698?style=flat-square&logo=tor-browser)" />
 </p>
 
 <p align="center">
-  <b>"Deciphering the future before it happens.."</b><br>
-  <i>The Industry Standard for AI-Augmented Reconnaissance & Sovereign Intelligence Mapping.</i>
+  <b>A High-Performance OSINT Automation Framework</b><br>
+  <i>Leveraging Golang concurrency and LLMs for efficient data reconnaissance and intelligence gathering.</i>
 </p>
 
 ---
 
-###  EXECUTIVE SUMMARY
-**CIPHER-OSINT v7.0** is a multi-dimensional intelligence orchestration framework. Engineered in high-concurrency **Golang**, it integrates the **Zenith Overlord Engine** to fuse real-time surface scraping with the **Ghost Protocol** (Tor Stealth). By utilizing recursive neural synthesis, it deconstructs technical indicators into high-fidelity actionable intelligence.
+### Project Overview
+**CIPHER-OSINT v7.0** is an intelligence gathering tool built with **Golang**. It automates the process of scraping data from both the clear web and dark web (Tor network), then processes raw data using Large Language Models (LLMs) to generate actionable reports. The system is designed for high concurrency, ensuring fast execution even when handling multiple target nodes.
 
 ---
 
-### 🛠️ TACTICAL SPECIFICATIONS
+### Key Features
 
-| COMPONENT | PROTOCOL | CAPABILITY |
+| Component | Technology | Description |
 | :--- | :--- | :--- |
-| **Omni-Neural Nexus** | `Multi-LLM v7` | Adaptive reasoning across Gemini 2.0, GPT-4o, and Claude 3.5. |
-| **Dark Web Predator** | `Tor SOCKS5` | Surgical extraction of .onion leak sites and Ransomware nodes. |
-| **Zenith Dashboard** | `Go-Fiber 2.0` | Ultra-low latency Neural Interface with real-time Markdown rendering. |
-| **Sovereign Vault** | `AES-Vaulting` | Automated archival of intelligence reports in high-fidelity Markdown. |
-| **Token Guardian** | `Normalization` | 90% optimization of AI tokens via advanced metadata stripping. |
+| **LLM Integration** | `Gemini 2.0 / GPT-4o` | Analyzes scraped data to extract relevant patterns and intelligence. |
+| **Dark Web Scraper** | `Tor SOCKS5` | Routes traffic through Tor to access and scrape .onion services securely. |
+| **Web Interface** | `Go-Fiber` | Low-latency dashboard for real-time monitoring and control. |
+| **Secure Storage** | `AES Encryption` | Automatically archives generated reports in encrypted Markdown format. |
+| **Token Optimizer** | `Text Processing` | Pre-processes raw text to reduce AI token usage by ~90%. |
 
 ---
 
-### SYSTEM TOPOLOGY (INTELLIGENCE FLOW)
+### System Architecture
+
+The following diagram illustrates the data flow from target acquisition to report generation.
 
 ```mermaid
 graph LR
-    A[Target Identifier] --> B{Zenith Orchestrator}
-    B -->|Neural Scrape| C[Concurrent Surface Nodes]
-    B -->|Ghost Mode| D[Dark Web Predator]
-    C --> E[Token Guardian]
+    A[Target Input] --> B{Core Engine}
+    B -->|HTTP/S| C[Surface Scraper]
+    B -->|SOCKS5| D[Tor Scraper]
+    C --> E[Data Normalizer]
     D --> E
-    E --> F{Omni-Nexus AI}
-    F -->|Recursive Synthesis| G[Neural Dashboard]
-    G -->|Vaulting| H[Intelligence Archive]
-    style B fill:#000,stroke:#10b981,stroke-width:2px,color:#fff
-    style F fill:#10b981,stroke:#000,stroke-width:4px,color:#000
-    style G fill:#000,stroke:#10b981,stroke-width:2px,color:#fff
+    E --> F{LLM Processor}
+    F -->|Analysis| G[Dashboard UI]
+    G -->|Save| H[Local Archive]
+    style B fill:#333,stroke:#10b981,stroke-width:2px,color:#fff
+    style F fill:#10b981,stroke:#000,stroke-width:2px,color:#000
 ```
 
 ---
 
-###  DEPLOYMENT PROTOCOL
+### Installation & Usage
 
-Optimized for high-performance deployment on Linux and advanced Termux nodes.
+Optimized for Linux environments and Termux. Ensure Tor service is running for dark web features.
 
 ```bash
-# 1. Initialize the Sovereign Node
+# 1. Clone the repository
 git clone https://github.com/cipher-attack/cipher-osint.git
 
-# 2. Synchronize Neural Dependencies
+# 2. Install dependencies
 cd cipher-osint && go mod tidy
 
-# 3. Configure Neural Link
+# 3. Configure Environment
+# Add your API keys to the .env file
 echo "GEMINI_API_KEY=your_key_here" > .env
 
-# 4. Initiate Infiltration
+# 4. Run the application
 go run .
 ```
 
-> **GHOST-PRO-TIP:** Ensure your **Tor Gateway** is active on `127.0.0.1:9050` before engaging **Predator Mode** for .onion reconnaissance.
+> **Note:** For .onion scraping, ensure your local Tor listener is active on `127.0.0.1:9050`.
 
 ---
 
-###  ZENITH INTERFACE CAPABILITIES
--  **Multi-Model Inversion**: Real-time switching between world-class neural nodes.
--   **Ghost Protocol**: Toggle active Tor routing for deep-web reconnaissance.
--   **Dynamic Rendering**: Live visualization of intelligence via `Zenith-Interface`.
--   **Neural Export**: Export tactical reports in structured Markdown directly from the UI.
+### Interface Capabilities
+- **Model Switching:** Hot-swap between different AI models (Gemini, GPT, Claude) via the UI.
+- **Tor Toggle:** Enable or disable Tor routing based on target requirements.
+- **Live Preview:** Real-time Markdown rendering of incoming intelligence data.
+- **Export:** One-click export of analysis reports.
 
 ---
 
-### 👤 THE ARCHITECT
+### 👤 Author
 
 <div align="center">
 <table style="border-collapse: collapse; border: none;">
   <tr style="border: none;">
     <td align="center" style="border: none; padding: 20px;">
-      <img src="https://github.com/cipher-attack.png" width="160" style="border-radius: 20px; border: 4px solid #10b981; box-shadow: 0px 0px 20px rgba(16, 185, 129, 0.4);" />
+      <img src="[https://github.com/cipher-attack.png](https://github.com/cipher-attack.png)" width="160" style="border-radius: 20px; border: 4px solid #10b981;" />
     </td>
     <td style="border: none; padding: 20px; text-align: left;">
-      <h3 style="margin-top: 0; color: #10b981;">Biruk Getachew (CIPHER)</h3>
-      <i style="color: #ffffff;">Principal Architect | Cybersecurity & Neural Systems Expert</i><br><br>
-      <p style="max-width: 500px; color: #cbd5e1;">Specializing in Sovereign Intelligence Systems, Neural Interaction, and High-Concurrency Architectural Reconnaissance. Engineering the future of cybersecurity research through high-precision neural logic.</p>
+      <h3 style="margin-top: 0; color: #10b981;">Biruk Getachew</h3>
+      <i style="color: #cbd5e1;">Software Engineer & Cybersecurity Researcher</i><br><br>
+      <p style="max-width: 500px; color: #94a3b8;">Focused on building scalable security tools and exploring the intersection of AI and OSINT. Experienced in Golang system architecture and network reconnaissance.</p>
       <div style="margin-top: 15px;">
-        <a href="https://www.youtube.com/@cipher-attack"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" /></a>
-        <a href="https://github.com/cipher-attack"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-        <a href="https://t.me/cipher_attacks"><img src="https://img.shields.io/badge/Telegram-26A6E1?style=for-the-badge&logo=telegram&logoColor=white" /></a>
+        <a href="[https://www.youtube.com/@cipher-attack](https://www.youtube.com/@cipher-attack)"><img src="[https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)" /></a>
+        <a href="[https://github.com/cipher-attack](https://github.com/cipher-attack)"><img src="[https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)" /></a>
+        <a href="[https://t.me/cipher_attacks](https://t.me/cipher_attacks)"><img src="[https://img.shields.io/badge/Telegram-26A6E1?style=for-the-badge&logo=telegram&logoColor=white](https://img.shields.io/badge/Telegram-26A6E1?style=for-the-badge&logo=telegram&logoColor=white)" /></a>
       </div>
     </td>
   </tr>
@@ -130,11 +133,10 @@ go run .
 
 ---
 
-###  ETHICAL DISCLOSURE
-This framework is released strictly for authorized cybersecurity research, red-teaming, and institutional intelligence gathering. Unauthorized deployment against target systems is strictly prohibited. The developer assumes no liability for tactical misuse.
+### Disclaimer
+This tool is developed for educational purposes and authorized security research only. The author is not responsible for any misuse of this software. Please adhere to all applicable laws and regulations when conducting OSINT investigations.
 
 <p align="center">
   <br>
-  <b>Deciphering the future before it happens..</b><br>
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=10b981&height=100&section=footer" />
+  <img src="[https://capsule-render.vercel.app/api?type=waving&color=10b981&height=100&section=footer](https://capsule-render.vercel.app/api?type=waving&color=10b981&height=100&section=footer)" />
 </p>
